@@ -1,4 +1,5 @@
 import sys
+import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -6,7 +7,10 @@ from openai import OpenAI
 load_dotenv()
 
 # Create the OpenAI client 
-client = OpenAI()
+client = OpenAI(
+    base_url=os.environ["VOCAREUM_OPENAI_BASE_URL"],
+    api_key=os.environ["VOCAREUM_OPENAI_KEY"],
+)
 
 def askQuestion(question:str):
     """Send one question to the LLM and return the answer text."""

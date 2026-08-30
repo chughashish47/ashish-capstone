@@ -4,6 +4,9 @@ __pychache__/
 .venv/
 venv/
 
+.capstoneenv
+capstoneenv/
+
 #Secrets - never commit
 .env
 .env.local
